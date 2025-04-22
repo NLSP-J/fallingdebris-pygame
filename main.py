@@ -1,5 +1,4 @@
 import pygame as pg
-import random, time
 import asyncio
 import sys
 
