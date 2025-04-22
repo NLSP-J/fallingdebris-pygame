@@ -27,8 +27,8 @@ obj_data = []     # List to store object positions and their images
 obj = pg.image.load("./assets/images/e1.png")
 obj = pg.transform.scale(obj, (obj_size, obj_size))
 
-bg_image = pg.image.load("./assets/images/background.png")
-bg_image = pg.transform.scale(bg_image, (win_width, win_height))
+# bg_image = pg.image.load("./assets/images/background.png")
+# bg_image = pg.transform.scale(bg_image, (win_width, win_height))
 
 
 def create_object(obj_data):
@@ -76,7 +76,7 @@ async def main():
                     x += 20
                 player_pos = [x, y]
     
-        screen.blit(bg_image, (0, 0))
+        # screen.blit(bg_image, (0, 0))
         screen.blit(player_image, (player_pos[0], player_pos[1]))
     
         text = f'Score: {score}'
