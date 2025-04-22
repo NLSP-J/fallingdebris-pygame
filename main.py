@@ -84,8 +84,8 @@ async def main():
         update_objects(obj_data)
         collision_check(obj_data, player_pos)
     
-        clock.tick(60)
         pg.display.update()
+        clock.tick(60)
         await asyncio.sleep(0)
 
 asyncio.run(main())
