@@ -14,7 +14,6 @@ pg.display.set_caption('Falling Debris')
 font = pg.font.Font(None, 30)
 speed = 10
 score = 0
-running = True
 
 player_size = 40
 player_pos = [win_width / 2, win_height - player_size]  # 400, 600-40
@@ -58,15 +57,13 @@ def collision_check(obj_data, player_pos):
         player_rect = pg.Rect(player_x, player_y, player_size, player_size)
         if player_rect.colliderect(obj_rect):
             time.sleep(2)
-            running = False
             break
 
 async def main():
-    global running
-    while running:
+    while True:
         for event in pg.event.get():
             if event.type == pg.QUIT:
-                running = False
+                break
     
             if event.type == pg.KEYDOWN:
                 x, y = player_pos[0], player_pos[1]
