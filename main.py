@@ -56,8 +56,8 @@ def collision_check(obj_data, player_pos):
         obj_rect = pg.Rect(x, y, obj_size, obj_size)
         player_rect = pg.Rect(player_x, player_y, player_size, player_size)
         if player_rect.colliderect(obj_rect):
-            time.sleep(2)
-            break
+            while True:
+                pass
 
 async def main():
     while True:
@@ -85,7 +85,7 @@ async def main():
         collision_check(obj_data, player_pos)
     
         pg.display.update()
-        clock.tick(60)
+        clock.tick(30)
         await asyncio.sleep(0)
 
 asyncio.run(main())
