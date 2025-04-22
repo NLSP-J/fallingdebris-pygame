@@ -31,35 +31,35 @@ obj = pg.transform.scale(obj, (obj_size, obj_size))
 # bg_image = pg.transform.scale(bg_image, (win_width, win_height))
 
 
-def create_object(obj_data):
-    if len(obj_data) < 10 and random.random() < 0.1:            
-        x = random.randint(0, win_width - obj_size)
-        y = 0                                         
-        obj_data.append([x, y, obj])
+# def create_object(obj_data):
+#     if len(obj_data) < 10 and random.random() < 0.1:            
+#         x = random.randint(0, win_width - obj_size)
+#         y = 0                                         
+#         obj_data.append([x, y, obj])
 
-def update_objects(obj_data):
-    global score
+# def update_objects(obj_data):
+#     global score
 
-    for object in obj_data:
-        x, y, image_data = object
-        if y < win_height:
-            y += speed
-            object[1] = y
-            screen.blit(image_data, (x, y))
-        else:
-            obj_data.remove(object)
-            score += 1
+#     for object in obj_data:
+#         x, y, image_data = object
+#         if y < win_height:
+#             y += speed
+#             object[1] = y
+#             screen.blit(image_data, (x, y))
+#         else:
+#             obj_data.remove(object)
+#             score += 1
 
-def collision_check(obj_data, player_pos):
-    global running
-    for object in obj_data:
-        x, y, image_data = object
-        player_x, player_y = player_pos[0], player_pos[1]
-        obj_rect = pg.Rect(x, y, obj_size, obj_size)
-        player_rect = pg.Rect(player_x, player_y, player_size, player_size)
-        if player_rect.colliderect(obj_rect):
-            while True:
-                pass
+# def collision_check(obj_data, player_pos):
+#     global running
+#     for object in obj_data:
+#         x, y, image_data = object
+#         player_x, player_y = player_pos[0], player_pos[1]
+#         obj_rect = pg.Rect(x, y, obj_size, obj_size)
+#         player_rect = pg.Rect(player_x, player_y, player_size, player_size)
+#         if player_rect.colliderect(obj_rect):
+#             while True:
+#                 pass
 
 async def main():
     while True:
@@ -83,9 +83,9 @@ async def main():
         text = font.render(text, 10, black)
         screen.blit(text, (win_width - 200, win_height - 40))
     
-        create_object(obj_data)
-        update_objects(obj_data)
-        collision_check(obj_data, player_pos)
+        # create_object(obj_data)
+        # update_objects(obj_data)
+        # collision_check(obj_data, player_pos)
     
         pg.display.update()
         clock.tick(30)
