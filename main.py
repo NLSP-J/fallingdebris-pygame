@@ -18,7 +18,7 @@ score = 0
 
 player_size = 40
 player_pos = [win_width / 2, win_height - player_size]  # 400, 600-40
-player_image = pg.image.load("./assets/images/mario.png")
+player_image = pg.image.load("./assets/images/mario.png").convert_alpha()
 player_image = pg.transform.scale(player_image, (player_size, player_size))  # 40,40
 
 # obj_size = 60
@@ -63,7 +63,6 @@ player_image = pg.transform.scale(player_image, (player_size, player_size))  # 4
 async def main():
     while True:
         for event in pg.event.get():
-
             if event.type == pg.KEYDOWN:
                 x, y = player_pos[0], player_pos[1]
                 if event.key == pg.K_LEFT:
