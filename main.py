@@ -61,6 +61,7 @@ player_image = pg.transform.scale(player_image, (player_size, player_size))  # 4
 #                 pass
 
 async def main():
+    global player_pos
     while True:
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
