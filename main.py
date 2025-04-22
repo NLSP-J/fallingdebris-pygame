@@ -18,15 +18,15 @@ running = True
 
 player_size = 40
 player_pos = [win_width / 2, win_height - player_size]  # 400, 600-40
-player_image = pg.image.load('mario.png')
+player_image = pg.image.load('./assets/images/mario.png')
 player_image = pg.transform.scale(player_image, (player_size, player_size))  # 40,40
 
 obj_size = 60
 obj_data = []     # List to store object positions and their images
-obj = pg.image.load('e1.png')
+obj = pg.image.load('./assets/images/e1.png')
 obj = pg.transform.scale(obj, (obj_size, obj_size))
 
-bg_image = pg.image.load('background.png')
+bg_image = pg.image.load('./assets/images/background.png')
 bg_image = pg.transform.scale(bg_image, (win_width, win_height))
 
 
