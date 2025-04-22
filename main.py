@@ -22,10 +22,10 @@ player_pos = [win_width / 2, win_height - player_size]  # 400, 600-40
 player_image = pg.image.load("./assets/images/mario.png")
 player_image = pg.transform.scale(player_image, (player_size, player_size))  # 40,40
 
-obj_size = 60
-obj_data = []     # List to store object positions and their images
-obj = pg.image.load("./assets/images/e1.png")
-obj = pg.transform.scale(obj, (obj_size, obj_size))
+# obj_size = 60
+# obj_data = []     # List to store object positions and their images
+# obj = pg.image.load("./assets/images/e1.png")
+# obj = pg.transform.scale(obj, (obj_size, obj_size))
 
 # bg_image = pg.image.load("./assets/images/background.png")
 # bg_image = pg.transform.scale(bg_image, (win_width, win_height))
@@ -64,10 +64,7 @@ obj = pg.transform.scale(obj, (obj_size, obj_size))
 async def main():
     while True:
         for event in pg.event.get():
-            if event.type == pg.QUIT:
-                pg.quit()
-                sys.exit()
-    
+
             if event.type == pg.KEYDOWN:
                 x, y = player_pos[0], player_pos[1]
                 if event.key == pg.K_LEFT:
@@ -79,9 +76,9 @@ async def main():
         # screen.blit(bg_image, (0, 0))
         screen.blit(player_image, (player_pos[0], player_pos[1]))
     
-        text = f'Score: {score}'
-        text = font.render(text, 10, black)
-        screen.blit(text, (win_width - 200, win_height - 40))
+        # text = f'Score: {score}'
+        # text = font.render(text, 10, black)
+        # screen.blit(text, (win_width - 200, win_height - 40))
     
         # create_object(obj_data)
         # update_objects(obj_data)
